@@ -7,9 +7,10 @@ public class Game
     public Game()
     {
         _players = new List<Player>();
+        Board = new Board();
     }
 
-    public int Board { get; set; } = 9;
+    public Board Board { get; }
 
     public void AddPlayer(Player player)
     {
@@ -18,7 +19,6 @@ public class Game
         
         _players.Add(player);
     }
-
 
     public int Start()
     {

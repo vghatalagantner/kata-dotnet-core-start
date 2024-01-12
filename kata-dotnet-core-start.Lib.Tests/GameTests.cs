@@ -38,7 +38,7 @@ public class GameTests
         var game = new Game();
         
         // Act
-        var board = game.Board;
+        var board = game.Board.Boxes.Count();
         
         // Assert
         Assert.Equal(9, board);
