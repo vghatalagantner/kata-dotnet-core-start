@@ -11,9 +11,24 @@ public class GameTests
         game.AddPlayer(new Player("Raj"));
 
         // Act
-        var player = game.Players.Count;
+        var actual = game.Players.Count();
 
         // Assert
-        Assert.Equal(2, player);
+        Assert.Equal(2, actual);
+    }
+
+    [Fact]
+    public void Only_Two_Players_Are_Allowed()
+    {
+        // Arrange
+        var game = new Game();
+        game.AddPlayer(new Player("Vijay"));
+        game.AddPlayer(new Player("Raj")); ;
+        
+        // Act
+        var actual = Assert.Throws<InvalidOperationException>(() => game.AddPlayer(new Player("Kalpesh")));
+
+        // Assert
+        Assert.IsType<InvalidOperationException>(actual);
     }
 }
