@@ -30,5 +30,6 @@ public class GameTests
 
         // Assert
         Assert.IsType<InvalidOperationException>(actual);
+        Assert.Equal("Only two players are allowed", actual.Message);
     }
 }
