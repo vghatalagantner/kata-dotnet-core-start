@@ -18,4 +18,10 @@ public class Game
         
         _players.Add(player);
     }
+
+
+    public int Start()
+    {
+        return 2;
+    }
 }
