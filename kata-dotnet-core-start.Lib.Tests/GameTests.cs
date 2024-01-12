@@ -38,9 +38,22 @@ public class GameTests
         var game = new Game();
         
         // Act
-        var board = game.Board.Boxes.Count();
+        var boxes = game.Board.Boxes;
         
         // Assert
-        Assert.Equal(9, board);
+        Assert.Equal(9, boxes.Count());
+    }
+
+    [Fact]
+    public void Board_Should_Be_Empty_On_Init()
+    {
+        // Arrange
+        var game = new Game();
+        
+        // Act
+        var board = game.Board.Boxes;
+
+        // Assert
+        Assert.True(game.Board.Boxes.All(x => x.Player == null));
     }
 }

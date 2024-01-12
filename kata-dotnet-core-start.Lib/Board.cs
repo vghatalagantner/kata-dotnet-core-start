@@ -4,18 +4,7 @@ public class Board
 {
     public Board()
     {
-        Boxes = new List<Box>
-        {
-            new Box(1),
-            new Box(2),
-            new Box(3),
-            new Box(4),
-            new Box(5),
-            new Box(6),
-            new Box(7),
-            new Box(8),
-            new Box(9),
-        };
+        Boxes = Enumerable.Range(1, 9).Select(x => new Box(x));
     }
     public IEnumerable<Box> Boxes { get; }
         
@@ -29,4 +18,5 @@ public class Box
     }
     
     public int Position { get; }
+    public object Player { get; set; }
 }
