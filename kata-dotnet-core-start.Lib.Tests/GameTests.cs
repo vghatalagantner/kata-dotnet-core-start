@@ -30,4 +30,17 @@ public class GameTests
         // Assert
         Assert.Equal(2, actual);
     }
+
+    [Fact]
+    public void Board_Should_Have_Nine_Boxes()
+    {
+        // Arrange
+        var game = new Game();
+        
+        // Act
+        var board = game.Board;
+        
+        // Assert
+        Assert.Equal(9, board);
+    }
 }

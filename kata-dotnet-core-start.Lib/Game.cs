@@ -9,7 +9,7 @@ public class Game
         _players = new List<Player>();
     }
 
-    public IEnumerable<Player> Players => _players;
+    public int Board { get; set; } = 9;
 
     public void AddPlayer(Player player)
     {
